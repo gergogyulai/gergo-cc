@@ -1,10 +1,19 @@
 import Image from 'next/image';
+import ProjectCard from '@/components/ProjectCard';
+async function getData() {
+  const res = await fetch('https://raw.githubusercontent.com/gergogyulai/gergoo-cc/master/src/app/data.json', {
+    next: {
+      revalidate: 2000
+    }
+  });
+  return res.json();
+}
 
-
-export default function Home() {
+export default async function Home() {
+  const data = await getData();
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between p-14">
+      <main className="flex min-h-screen flex-col items-center justify-between p-14 select-none">
         <div className='fixed flex flex-col gap-2 left-0 p-2 bg-white rounded-r-lg'>
             <a href="https://github.com/gergogyulai/main">
               <div className=' hover:opacity-60'>
@@ -36,83 +45,23 @@ export default function Home() {
         </div>
 
         <div className="relative flex flex-col place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-
           <h1 className='text-5xl font-bold'>Gergo's demo page</h1>
           <p className='mt-4 text-xl'>Only old stuff, nothing new I could put here</p>
           <p className='mt-1'>I mainly work with Svelte(kit) and Next.js using Firebase lately.</p>
 
           <div className="mt-8 flex flex-col">
-            <a
-              href="https://fazs.xyz/src/projects/reg-login-frontend/login/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Ugly Ass Signin/Up
-                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2 motion-reduce:transform-none">-&gt;</span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Ugly ass unresponsive login/register page 
-              </p>
-            </a>
-
-            <a
-              href="https://fazs.xyz/src/projects/parallax-page/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Parallax Pages
-                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2 motion-reduce:transform-none">-&gt;</span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Parallax scrolling built with HTML5, CSS this shit doesnt work on mobile and i wont fix it        
-              </p>
-            </a>
-
-            <a
-              href="https://fazs.xyz/src/projects/darkmode/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                Local Storage Dark Mode
-                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2 motion-reduce:transform-none">-&gt;</span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Dark mode built with some basic JavaScript, it stores the choice of the user in LocalStorage
-              </p>
-            </a>
-
-            <a
-              href="https://fazs.xyz/src/projects/string-gen/advanced/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                String Generator
-                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2 motion-reduce:transform-none">-&gt;</span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Compile your own string and copy it with one click
-              </p>
-            </a>
-
-            <a
-              href="https://fazs.xyz/src/projects/ios-settings/"
-              className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-              target="_blank"
-            >
-              <h2 className={`mb-3 text-2xl font-semibold`}>
-                The Worst iOS Settings clone
-                <span className="inline-block transition-transform group-hover:translate-x-1 ml-2 motion-reduce:transform-none">-&gt;</span>
-              </h2>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-                Compile your own string and copy it with one click
-              </p>
-            </a>
+            {Object.keys(data).map((title) => {
+              const { description, link } = data[title];
+              return (
+                <ProjectCard
+                  key={title}
+                  title={title}
+                  description={description}
+                  link={link}
+                />
+              );
+            })}
           </div>
-          <span className='fixed bg-white text-black bottom-0 p-2 rounded-t-xl'>Temporarily all links lead to the old Fazs.xyz GitHub pages site</span>
         </div>
       </main>
     </>
