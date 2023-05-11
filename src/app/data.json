@@ -1,22 +1,22 @@
 {
     "Ugly Ass Signin/Up": {
         "description": "Ugly ass unresponsive login/register page",
-        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login/"
+        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login"
     },
     "Parallax Pages": {
-        "description": "Ugly ass unresponsive login/register page",
-        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login/"
+        "description": "Parallax scrolling built with HTML5, CSS this shit doesnt work on mobile and i wont fix it",
+        "link": "https://fazs.xyz/src/projects/parallax-page"
     },
     "Local Storage Dark Mode": {
-        "description": "Ugly ass unresponsive login/register page",
-        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login/"
+        "description": "Dark mode built with some basic JavaScript, it stores the choice of the user in LocalStorage",
+        "link": "https://fazs.xyz/src/projects/darkmode"
     },
     "String Generator": {
-        "description": "Ugly ass unresponsive login/register page",
-        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login/"
+        "description": "Compile your own string and copy it with one click",
+        "link": "https://fazs.xyz/src/projects/string-gen/advanced"
     },
     "The Worst iOS Settings clone": {
         "description": "Unfinished piece of crap iOS Settings clone",
-        "link": "https://fazs.xyz/src/projects/reg-login-frontend/login/"
+        "link": "https://fazs.xyz/src/projects/ios-settings"
     }
 }
