@@ -11,7 +11,11 @@
         "description": "Dark mode built with some basic JavaScript, it stores the choice of the user in LocalStorage",
         "link": "https://fazs.xyz/src/projects/darkmode"
     },
-    "String Generator": {
+    "String Generator NEW": {
+        "description": "Compile your own string and copy it with one click",
+        "link": "https://fazs.xyz/src/projects/string-gen/advanced"
+    },
+    "String Generator Old": {
         "description": "Compile your own string and copy it with one click",
         "link": "https://fazs.xyz/src/projects/string-gen/advanced"
     },
