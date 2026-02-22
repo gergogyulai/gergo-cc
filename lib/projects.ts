@@ -3,7 +3,7 @@ import type { ChipStatus } from "@/components/progress-chips";
 
 export type Project = {
   title: string;
-  type? : "Browser Extension" | "Web App" | "Mobile App" | "CLI Tool" | "Desktop App" | "Library" | "Other" | "Website" | "API" | "Game" | "Bot" | "Firmware" | "Script" | "Plugin" | "Theme" | "Template" | "Tool" | "Automation" | "Portfolio" | "Utility" | "DevOps";
+  type? : "Browser Extension" | "Web App" | "Mobile App" | "CLI Tool" | "Desktop App" | "Library" | "Other" | "Website" | "API" | "Game" | "Bot" | "Firmware" | "Script" | "Plugin" | "Theme" | "Template" | "Tool" | "Automation" | "Portfolio" | "Utility" | "DevOps" | "User Script";
   scope?: "Personal" | "Work" | "Open Source" | "School" | "Collaboration" | "Hackathon" | "Research" | "Community" | "Experiment" | "Other";
   description: string;
   href?: string;
@@ -14,6 +14,14 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    title: "Project Minato",
+    scope: "Open Source",
+    description: "A self-hosted torrent scraper and indexer with a built-in search UI and Torznab API support.",
+    githubRepo: "https://github.com/gergogyulai/minato",
+    status: "InProgress",
+    tags: ["Typescript", "Hono", "Golang", "React", "Docker"]
+  },
   {
     title: "Magneto",
     type: "Browser Extension",
@@ -32,6 +40,24 @@ export const projects: Project[] = [
     githubRepo: "https://github.com/gergogyulai/toki",
     status: "InProgress",
     tags: ["Python"]
+  },
+  {
+    title: "tiktok-exporter",
+    type: "User Script",
+    scope: "Open Source",
+    description: "Userscript to export tiktok reposts, likes, and favorites into a non-proprietary format for personal archiving",
+    githubRepo: "https://github.com/gergogyulai/tiktok-exporter",
+    status: "Shipped",
+    tags: ["Javascript"]
+  },
+  {
+    title: "jellyfin-sso-ui",
+    type: "User Script",
+    scope: "Open Source",
+    description: "Native-feeling UI for the Jellyfin SSO Auth Plugin",
+    githubRepo: "https://github.com/gergogyulai/jellyfin-sso-ui",
+    status: "Shipped",
+    tags: ["Javascript"]
   },
   {
     title: "Lofiplayer",
@@ -65,15 +91,6 @@ export const projects: Project[] = [
     tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
   },
   {
-    title: "Sonora",
-    type: "Mobile App",
-    scope: "Open Source",
-    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
-    githubRepo: "https://github.com/gergogyulai/sonora",
-    status: "OnHold",
-    tags: ["ReactNative", "Expo", "Typescript"]
-  },
-  {
     title: "Wintoolbelt",
     type: "Desktop App",
     scope: "Personal",
@@ -90,6 +107,15 @@ export const projects: Project[] = [
     githubRepo: "https://github.com/gergogyulai/cloneall",
     status: "Shipped",
     tags: ["Golang"]
+  },
+  {
+    title: "Sonora",
+    type: "Mobile App",
+    scope: "Open Source",
+    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
+    githubRepo: "https://github.com/gergogyulai/sonora",
+    status: "Abandoned",
+    tags: ["ReactNative", "Expo", "Typescript"]
   },
   {
     title: "Veyonctl",
