@@ -33,13 +33,13 @@ export const projects: Project[] = [
     tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
   },
   {
-    title: "Toki",
+    title: "Lysi",
     type: "CLI Tool",
     scope: "Personal",
-    description: "Fast, metadata-aware CLI tool for renaming and organizing photo and video collections.",
-    githubRepo: "https://github.com/gergogyulai/toki",
+    description: "A minimalist Rust CLI to transform messy directories into a standardized photo library.",
+    githubRepo: "https://github.com/gergogyulai/lysi",
     status: "InProgress",
-    tags: ["Python"]
+    tags: ["Rust"]
   },
   {
     title: "tiktok-exporter",
