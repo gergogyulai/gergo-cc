@@ -8,9 +8,9 @@
 
  ## Built With
 
- *   [Next.js 15](https://nextjs.org/) - React framework for building performant
+ *   [Next.js 16](https://nextjs.org/) - React framework for building performant
      web applications.
- *   [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework for
+ *   [Tailwind v4](https://tailwindcss.com/) - Utility-first CSS framework for
      rapid UI development.
  *   [Motion](https://motion.dev/) - A production-ready animation
      library for React.

@@ -13,6 +13,7 @@ export function ThemeToggle() {
       <div className="hidden md:flex items-center gap-2">
         <Sun className="size-5 dark:hidden" />
         <Moon className="hidden size-5 dark:block" />
+        <span className="terminal-label tracking-[0.14em]">theme</span>
         <KeyboardShortcut shortcut="T" />
       </div>
       <div className="block md:hidden">

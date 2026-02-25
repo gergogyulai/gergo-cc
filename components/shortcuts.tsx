@@ -36,6 +36,10 @@ export default function Shortcuts() {
         router.push("/");
       }
 
+      if (event.key === "a" && pathname === "/projects") {
+        window.open(`${siteConfig.links.github}?tab=repositories`, "_blank");
+      }
+
       if (event.key === "h") {
         router.push("/");
       }

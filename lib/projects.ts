@@ -17,7 +17,7 @@ export const projects: Project[] = [
   {
     title: "Project Minato",
     scope: "Open Source",
-    description: "A self-hosted torrent scraper and indexer with a built-in search UI and Torznab API support.",
+    description: "Self-hosted torrent scraper and indexer with a search UI and Torznab API support. Still in progress.",
     githubRepo: "https://github.com/gergogyulai/minato",
     status: "InProgress",
     tags: ["Typescript", "Hono", "Golang", "React", "Docker"]
@@ -26,7 +26,7 @@ export const projects: Project[] = [
     title: "Magneto",
     type: "Browser Extension",
     scope: "Open Source",
-    description: "Privacy-first browser extension that automatically collects and archives magnet links while you browse.",
+    description: "Browser extension that collects magnet links while browsing so I can archive them later.",
     href: "https://magneto.crackhead.engineering/",
     githubRepo: "https://github.com/gergogyulai/magneto",
     status: "Shipped",
@@ -36,7 +36,7 @@ export const projects: Project[] = [
     title: "Lysi",
     type: "CLI Tool",
     scope: "Personal",
-    description: "A minimalist Rust CLI to transform messy directories into a standardized photo library.",
+    description: "Rust CLI I use to clean up messy photo folders into a more consistent library.",
     githubRepo: "https://github.com/gergogyulai/lysi",
     status: "InProgress",
     tags: ["Rust"]
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     title: "tiktok-exporter",
     type: "User Script",
     scope: "Open Source",
-    description: "Userscript to export tiktok reposts, likes, and favorites into a non-proprietary format for personal archiving",
+    description: "Userscript that exports TikTok reposts, likes, and favorites into a plain format for personal archiving.",
     githubRepo: "https://github.com/gergogyulai/tiktok-exporter",
     status: "Shipped",
     tags: ["Javascript"]
@@ -54,7 +54,7 @@ export const projects: Project[] = [
     title: "jellyfin-sso-ui",
     type: "User Script",
     scope: "Open Source",
-    description: "Native-feeling UI for the Jellyfin SSO Auth Plugin",
+    description: "UI improvements for the Jellyfin SSO Auth Plugin so it feels less bolted on.",
     githubRepo: "https://github.com/gergogyulai/jellyfin-sso-ui",
     status: "Shipped",
     tags: ["Javascript"]
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "Lofiplayer",
     type: "Web App",
     scope: "Open Source",
-    description: "Minimalistic 24/7 lofi music player for work, study, or relaxation.",
+    description: "Simple lofi music player I built because I wanted an always-on background music tab.",
     href: "https://lofiplayer.app",
     githubRepo: "https://github.com/gergogyulai/lofiplayer",
     status: "Shipped",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     title: "Yetweets",
     type: "Web App",
     scope: "Open Source",
-    description: "Archive of Kanye West's tweet history",
+    description: "Archive of Kanye West's tweet history. Mostly a data and archiving project.",
     href: "https://yetweets.xyz/",
     githubRepo: "https://github.com/gergogyulai/yetweets",
     status: "InProgress",
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     title: "Noisr",
     type: "Web App",
     scope: "Personal",
-    description: "Noise texture generator with custom size, density and color options",
+    description: "Noise texture generator with size, density, and color controls.",
     href: "https://noisr.gergo.cc",
     githubRepo: "https://github.com/gergogyulai/noisr",
     status: "Shipped",
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     title: "Wintoolbelt",
     type: "Desktop App",
     scope: "Personal",
-    description: "Tools for cleaning public school PCs, including browser resets and Veyon controls",
+    description: "Utilities I wrote for cleaning public school PCs, including browser resets and Veyon controls.",
     githubRepo: "https://github.com/gergogyulai/wintoolbelt",
     status: "Shipped",
     tags: ["PowerShell", "Hono", "Typescript"]
@@ -103,7 +103,7 @@ export const projects: Project[] = [
     title: "Cloneall",
     type: "CLI Tool",
     scope: "Open Source",
-    description: "CLI tool for cloning GitHub all repositories of a user or organization",
+    description: "CLI tool that clones all repositories from a GitHub user or organization.",
     githubRepo: "https://github.com/gergogyulai/cloneall",
     status: "Shipped",
     tags: ["Golang"]
@@ -112,7 +112,7 @@ export const projects: Project[] = [
     title: "Sonora",
     type: "Mobile App",
     scope: "Open Source",
-    description: "Sleek and modern music streaming app, powered by Jellyfin, built with Expo",
+    description: "Jellyfin music app built with Expo. I stopped working on it.",
     githubRepo: "https://github.com/gergogyulai/sonora",
     status: "Abandoned",
     tags: ["ReactNative", "Expo", "Typescript"]
@@ -121,7 +121,7 @@ export const projects: Project[] = [
     title: "Veyonctl",
     type: "CLI Tool",
     scope: "Open Source",
-    description: "CLI tool for Veyon Service control on Windows",
+    description: "Windows CLI for controlling the Veyon service.",
     githubRepo: "https://github.com/gergogyulai/veyonctl",
     status: "Archived",
     tags: ["CSharp"]
@@ -130,7 +130,7 @@ export const projects: Project[] = [
     title: "Minitools",
     type: "Other",
     scope: "Personal",
-    description: "Collection of simple utility tools in various languages",
+    description: "Small utility tools and experiments in a few languages.",
     githubRepo: "https://github.com/gergogyulai/minitools",
     status: "Archived",
     tags: ["Javascript", "Python", "Golang"]
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     title: "movie-web-tv",
     type: "Web App",
     scope: "Personal",
-    description: "Modified version of movie-web optimized for Smart TVs",
+    description: "Personal fork of movie-web adjusted for Smart TV use.",
     githubRepo: "https://github.com/gergogyulai/movie-web-tv",
     status: "Unknown",
     tags: ["React", "Tailwind", "Typescript", "Vite"]

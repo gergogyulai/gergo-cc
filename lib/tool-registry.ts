@@ -35,6 +35,12 @@ export const toolsRegistry: Record<
     src: "/icons/drizzle.svg",
     alt: "Drizzle",
   },
+  bullmq: {
+    href: "https://bullmq.io",
+    id: "bullmq",
+    src: "/icons/bullmq.svg",
+    alt: "BullMQ",
+  },
   cursor: {
     href: "https://cursor.dev",
     id: "cursor",

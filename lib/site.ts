@@ -1,9 +1,9 @@
 export type SiteConfig = typeof siteConfig
 
 export const siteConfig = {
-  name: "Gergo's Projects",
+  name: "gergo.cc",
   description:
-    "Gergo's Projects",
+    "Personal site and project list.",
   mainNav: [
     {
       title: "Home",

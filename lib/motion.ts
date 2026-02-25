@@ -1,4 +1,8 @@
-export const pageContainer = {
+import type { Variants } from "motion/react";
+
+const standardEase: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
+
+export const pageContainer: Variants = {
   hidden: {},
   show: {
     transition: {
@@ -8,7 +12,7 @@ export const pageContainer = {
   },
 };
 
-export const sectionContainer = {
+export const sectionContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -19,7 +23,7 @@ export const sectionContainer = {
   },
 };
 
-export const toolsContainer = {
+export const toolsContainer: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -30,11 +34,11 @@ export const toolsContainer = {
   },
 };
 
-export const item = {
+export const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1.0] },
+    transition: { duration: 0.3, ease: standardEase },
   },
 };

@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { useState } from 'react';
 
 export type Tool = {
@@ -82,7 +82,7 @@ export default function ToolLink({ tool, size = "md" }: { tool: Tool, size?: Siz
   return (
     <Link href={tool.href} target="_blank" rel="noopener noreferrer">
       <motion.div 
-        className={`flex flex-col justify-center items-center ring-border backdrop-blur-[2px] ring-1 rounded-lg transition-colors relative shadow-md group select-none overflow-hidden ${containerSizeClasses[size]}`}
+        className={`group relative flex flex-col items-center justify-center overflow-hidden border border-border bg-card/70 shadow-[0_0_0_1px_rgba(0,0,0,0.2)_inset,0_0_18px_rgba(34,197,94,0.08)] backdrop-blur-[2px] transition-colors select-none ${containerSizeClasses[size]}`}
         onMouseMove={handleMouseMove}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
@@ -95,6 +95,10 @@ export default function ToolLink({ tool, size = "md" }: { tool: Tool, size?: Siz
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: (tool.animationDelay ?? 0) + 0.05 }}
       >
+        <div className="pointer-events-none absolute inset-0 opacity-60">
+          <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_0,transparent_60%,rgba(34,197,94,0.04)_100%)]" />
+          <div className="absolute left-2 top-2 h-1.5 w-1.5 rounded-full bg-primary/70 shadow-[0_0_8px_rgba(34,197,94,0.45)]" />
+        </div>
         {tool.darkSrc ? (
           <>
             {/* Shadow layer */}

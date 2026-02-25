@@ -116,5 +116,23 @@ export const tools = [
     position: { x: 85, y: 81},
     size: "sm",
     animationDelay: 1.9,
-  },  
+  },
+  {
+    ...toolsRegistry.rust,
+    position: { x: 76, y: 66 },
+    size: "sm",
+    animationDelay: 2.0,
+  },
+  {
+    ...toolsRegistry.python,
+    position: { x: 91, y: 66 },
+    size: "sm",
+    animationDelay: 2.1,
+  },
+  {
+    ...toolsRegistry.bullmq,
+    position: { x: 74, y: 92 },
+    size: "sm",
+    animationDelay: 2.2,
+  },
 ];

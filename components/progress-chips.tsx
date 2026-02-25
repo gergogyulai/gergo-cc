@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 interface ProgressChipProps {
   name: ChipStatus;
@@ -15,23 +15,44 @@ export type ChipStatus =
   | "Archived"
   | "Abandoned"
   | "Unknown"
-  | "Repo"
+  | "Repo";
 
-  const chipMap = {
-  Archived: () => (
-    <div className="flex items-center justify-center rounded-lg bg-neutral-300 px-2 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800 dark:text-neutral-300">
-      <span>Archived</span>
+function ChipFrame({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={[
+        "flex items-center justify-center rounded-md border px-2 py-1 text-[10px] font-medium uppercase tracking-[0.12em]",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
+      {children}
     </div>
+  );
+}
+
+const chipMap = {
+  Archived: () => (
+    <ChipFrame className="border-border bg-muted/30 text-muted-foreground">
+      Archived
+    </ChipFrame>
   ),
   Unknown: () => (
-    <div className="flex items-center justify-center rounded-lg bg-neutral-300 px-2 py-1 text-xs font-medium text-neutral-800 dark:bg-neutral-800 dark:text-neutral-300">
-      <span>Unkown</span>
-    </div>
+    <ChipFrame className="border-border bg-muted/30 text-muted-foreground">
+      Unknown
+    </ChipFrame>
   ),
   InProgress: () => (
-    <div className="flex items-center justify-center rounded-lg bg-indigo-300 px-2 py-1 text-xs font-medium text-indigo-800 dark:bg-indigo-800 dark:text-indigo-200">
-      <span>In Progress</span>
-    </div>
+    <ChipFrame className="border-blue-400/35 bg-blue-500/10 text-blue-300">
+      In Progress
+    </ChipFrame>
   ),
   Shipped: () => {
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -46,8 +67,8 @@ export type ChipStatus =
     };
 
     return (
-      <motion.div 
-        className="relative flex items-center justify-center rounded-lg bg-green-200 px-2 py-1 text-xs font-medium text-green-800 ring-2 ring-inset ring-green-300 dark:bg-green-900 dark:text-green-300 dark:ring-green-700 overflow-hidden"
+      <motion.div
+        className="relative flex items-center justify-center overflow-hidden rounded-md border border-primary/45 bg-primary/10 px-2 py-1 text-[10px] font-medium uppercase tracking-[0.12em] text-primary"
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
@@ -56,10 +77,10 @@ export type ChipStatus =
       >
         {isHovering && (
           <motion.div
-            className="absolute inset-0 opacity-50"
+            className="absolute inset-0 opacity-60"
             style={{
-              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(74, 222, 128, 0.8) 0%, rgba(134, 239, 172, 0.3) 40%, transparent 70%)`,
-              pointerEvents: "none"
+              background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(198, 160, 246, 0.42) 0%, rgba(198, 160, 246, 0.16) 45%, transparent 72%)`,
+              pointerEvents: "none",
             }}
           />
         )}
@@ -68,26 +89,26 @@ export type ChipStatus =
     );
   },
   Planning: () => (
-    <div className="flex items-center justify-center rounded-lg bg-blue-100 px-2 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-300">
-      <span>Planning Phase</span>
-    </div>
+    <ChipFrame className="border-cyan-400/35 bg-cyan-500/10 text-cyan-300">
+      Planning
+    </ChipFrame>
   ),
   Abandoned: () => (
-    <div className="flex items-center justify-center rounded-lg bg-red-100 px-2 py-1 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
-      <span>Abandoned</span>
-    </div>
+    <ChipFrame className="border-red-400/40 bg-red-500/10 text-red-300">
+      Abandoned
+    </ChipFrame>
   ),
   Repo: () => (
-    <div className="flex items-center justify-center rounded-lg bg-emerald-100 px-2 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-900 dark:text-emerald-300">
-      <span>Repository</span>
-    </div>
+    <ChipFrame className="border-emerald-400/40 bg-emerald-500/10 text-emerald-300">
+      Repository
+    </ChipFrame>
   ),
   OnHold: () => (
-    <div className="flex items-center justify-center rounded-lg bg-amber-100 px-2 py-1 text-xs font-medium text-amber-800 dark:bg-amber-900 dark:text-amber-300">
-      <span>On Hold</span>
-    </div>
+    <ChipFrame className="border-amber-400/35 bg-amber-500/10 text-amber-300">
+      On Hold
+    </ChipFrame>
   ),
-};
+} satisfies Record<ChipStatus, React.FC>;
 
 export const ProgressChip: React.FC<ProgressChipProps> = ({ name }) => {
   const ChipComponent = chipMap[name];

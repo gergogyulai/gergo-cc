@@ -5,6 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@/components/analytics";
 import Shortcuts from "@/components/shortcuts";
 import { Toaster } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -43,18 +44,22 @@ export default function RootLayout({
       <head>
         <Analytics />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}>
         <Toaster />
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Shortcuts />
-          <div className="font-sans flex flex-col items-center min-h-screen py-16 md:px-10 gap-16 container">
-            {children}
-          </div>
+          <TooltipProvider>
+            <Shortcuts />
+            <div className="w-full min-h-screen px-4 py-6 md:px-8 md:py-10">
+              <div className="mx-auto flex w-full max-w-5xl flex-col gap-16 pb-2">
+                {children}
+              </div>
+            </div>
+          </TooltipProvider>
         </ThemeProvider>
       </body>
     </html>
