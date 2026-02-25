@@ -111,36 +111,36 @@
   }
 
   .dark {
-    --background: #1f2233;
-    --foreground: #cad3f5;
-    --card: #25293d;
-    --card-foreground: #cad3f5;
-    --popover: #25293d;
-    --popover-foreground: #cad3f5;
+    --background: #080a0f;
+    --foreground: #d9e1ff;
+    --card: #0d1119;
+    --card-foreground: #d9e1ff;
+    --popover: #0d1119;
+    --popover-foreground: #d9e1ff;
     --primary: #c6a0f6;
-    --primary-foreground: #181926;
-    --secondary: #303448;
-    --secondary-foreground: #cad3f5;
-    --muted: #2a2e40;
-    --muted-foreground: #a5adcb;
-    --accent: #41455b;
-    --accent-foreground: #cad3f5;
+    --primary-foreground: #090b10;
+    --secondary: #141927;
+    --secondary-foreground: #d9e1ff;
+    --muted: #101522;
+    --muted-foreground: #99a3c8;
+    --accent: #1b2130;
+    --accent-foreground: #d9e1ff;
     --destructive: #ed8796;
-    --border: #676c8568;
-    --input: #676c8554;
-    --ring: #c6a0f699;
+    --border: #8a93b126;
+    --input: #8a93b119;
+    --ring: #c6a0f65e;
     --chart-1: #8aadf4;
     --chart-2: #a6da95;
     --chart-3: #eed49f;
     --chart-4: #ed8796;
     --chart-5: #c6a0f6;
-    --sidebar: #191b28;
-    --sidebar-foreground: #cad3f5;
+    --sidebar: #06080d;
+    --sidebar-foreground: #d9e1ff;
     --sidebar-primary: #c6a0f6;
-    --sidebar-primary-foreground: #181926;
-    --sidebar-accent: #494d64;
-    --sidebar-accent-foreground: #cad3f5;
-    --sidebar-border: #6e738d70;
+    --sidebar-primary-foreground: #090b10;
+    --sidebar-accent: #202738;
+    --sidebar-accent-foreground: #d9e1ff;
+    --sidebar-border: #8a93b130;
     --sidebar-ring: #8aadf499;
   }
 }
@@ -166,6 +166,12 @@
     font-feature-settings: "liga" 0, "calt" 0;
   }
 
+  .dark body {
+    background-image:
+      radial-gradient(circle at 20% 0%, color-mix(in oklab, var(--primary) 3%, transparent), transparent 48%),
+      radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--primary) 2%, transparent), transparent 42%);
+  }
+
   body::before {
     content: "";
     position: fixed;
@@ -180,6 +186,10 @@
     );
     background-size: 100% 4px;
     z-index: -1;
+  }
+
+  .dark body::before {
+    opacity: 0.025;
   }
 
   body::after {
@@ -197,6 +207,10 @@
     background-size: 24px 24px;
     background-position: 12px 10px;
     opacity: 0.11;
+  }
+
+  .dark body::after {
+    opacity: 0.035;
   }
 }
 
