@@ -2,66 +2,98 @@ export type Project = {
   name: string;
   href: string;
   note: string;
+  featured?: boolean;
 };
 
-// Mirrors the links on the GitHub profile README.
-export const pinned: Project[] = [
+// Public, non-fork repos, most recently active first.
+// `featured` ones are the most polished and get listed on top.
+export const projects: Project[] = [
+  {
+    name: "picslop",
+    href: "https://picslop-web.vercel.app",
+    note: "image board for one shared inbox domain",
+  },
+  {
+    name: "adfreegpt",
+    href: "https://github.com/gergogyulai/adfreegpt",
+    note: "ublock origin filter for chatgpt ads",
+  },
   {
     name: "minato",
-    href: "https://github.com/gergogyulai/minato",
-    note: "self-hosted torrent indexer with a search ui and torznab api",
-  },
-  {
-    name: "magneto",
-    href: "https://github.com/gergogyulai/magneto",
-    note: "browser extension that collects magnet links for archiving",
-  },
-  {
-    name: "dotfiles",
-    href: "https://github.com/gergogyulai/dotfiles",
-    note: "shell, terminal and machine setup",
-  },
-  {
-    name: ".vscode-config",
-    href: "https://github.com/gergogyulai/vscode-config",
-    note: "editor settings and extensions",
-  },
-];
-
-export const other: Project[] = [
-  {
-    name: "yetweets",
-    href: "https://yetweets.xyz",
-    note: "archive of kanye west's tweet history",
-  },
-  {
-    name: "tiktok-exporter",
-    href: "https://github.com/gergogyulai/tiktok-exporter",
-    note: "export likes, reposts and favorites to plain files",
-  },
-  {
-    name: "lysi",
-    href: "https://github.com/gergogyulai/lysi",
-    note: "rust cli that sorts messy photo folders into a library",
-  },
-  {
-    name: "cloneall",
-    href: "https://github.com/gergogyulai/cloneall",
-    note: "clone every repo of a github user or org",
+    href: "https://projectminato.org",
+    note: "self-hosted vault for the torrent ecosystem",
+    featured: true,
   },
   {
     name: "jellyfin-sso-ui",
     href: "https://github.com/gergogyulai/jellyfin-sso-ui",
-    note: "makes the jellyfin sso plugin look native",
+    note: "native-feeling jellyfin sso plugin ui",
+  },
+  {
+    name: "diswhook",
+    href: "https://github.com/gergogyulai/diswhook",
+    note: "zero-dependency discord webhook client",
+  },
+  {
+    name: "cardoo",
+    href: "https://github.com/gergogyulai/cardoo",
+    note: "car ads, browsed like a dating app",
+  },
+  {
+    name: "classroom-enhanced",
+    href: "https://github.com/gergogyulai/classroom-enhanced",
+    note: "making google classroom suck a bit less",
+  },
+  {
+    name: "magneto",
+    href: "https://magneto.crackhead.engineering",
+    note: "collects magnet links while you browse",
+    featured: true,
+  },
+  {
+    name: "lysi",
+    href: "https://github.com/gergogyulai/lysi",
+    note: "turns messy folders into a photo library",
+  },
+  {
+    name: "tiktok-exporter",
+    href: "https://github.com/gergogyulai/tiktok-exporter",
+    note: "export tiktok reposts, likes and favorites",
+  },
+  {
+    name: "yetweets",
+    href: "https://yetweets.xyz",
+    note: "every tweet kanye west ever published",
+    featured: true,
+  },
+  {
+    name: "tgx-dump",
+    href: "https://github.com/gergogyulai/tgx-dump",
+    note: "all accessible dumps of torrentgalaxy",
   },
   {
     name: "lofiplayer",
-    href: "https://lofiplayer.app",
-    note: "an always-on background music tab",
+    href: "https://lofiplayer.gergo.cc",
+    note: "minimal lo-fi music player",
+  },
+  {
+    name: "wintoolbelt",
+    href: "https://github.com/gergogyulai/wintoolbelt",
+    note: "cleanup tools for public school pcs",
+  },
+  {
+    name: "referer",
+    href: "https://referer-iota.vercel.app",
+    note: "a whimsical meme maker",
   },
   {
     name: "noisr",
     href: "https://noisr.gergo.cc",
     note: "noise texture generator",
+  },
+  {
+    name: "cloneall",
+    href: "https://github.com/gergogyulai/cloneall",
+    note: "clone every repo of a github user or org",
   },
 ];

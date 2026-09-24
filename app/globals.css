@@ -88,12 +88,6 @@ p {
   margin-bottom: 2rem;
 }
 
-h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 2.25rem 0 0.5rem;
-}
-
 a {
   color: inherit;
   text-decoration: underline 1px var(--rule);
@@ -113,7 +107,7 @@ a:focus-visible {
 
 .list li {
   display: grid;
-  grid-template-columns: 18ch 1fr;
+  grid-template-columns: 21ch 1fr;
   gap: 2ch;
   padding: 0.15rem 0;
 }
@@ -157,6 +151,16 @@ a:focus-visible {
 
 .list a::after {
   content: "]";
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 2.25rem 0 0.5rem;
+}
+
+.featured span {
+  color: var(--ink);
 }
 
 footer {

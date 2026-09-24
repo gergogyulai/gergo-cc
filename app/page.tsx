@@ -1,12 +1,23 @@
 import type { CSSProperties } from "react";
-import { other, pinned, type Project } from "@/lib/projects";
+import { projects, type Project } from "@/lib/projects";
 
 // Each line fades in after the one before it, like text being printed.
 const line = (i: number) => ({ "--i": i }) as CSSProperties;
 
-function List({ items, from }: { items: Project[]; from: number }) {
+const featured = projects.filter((p) => p.featured);
+const rest = projects.filter((p) => !p.featured);
+
+function List({
+  items,
+  from,
+  className = "",
+}: {
+  items: Project[];
+  from: number;
+  className?: string;
+}) {
   return (
-    <ul className="list">
+    <ul className={`list ${className}`}>
       {items.map((p, i) => (
         <li key={p.name} className="in" style={line(from + i)}>
           <a href={p.href}>{p.name}</a>
@@ -18,7 +29,7 @@ function List({ items, from }: { items: Project[]; from: number }) {
 }
 
 export default function Home() {
-  const otherFrom = 3 + pinned.length;
+  const restFrom = 3 + featured.length;
 
   return (
     <main>
@@ -32,15 +43,15 @@ export default function Home() {
         tools and datahoarding. I also publish other things.
       </p>
 
-      <List items={pinned} from={2} />
+      <List items={featured} from={2} className="featured" />
 
-      <h2 className="in" style={line(otherFrom - 1)}>
+      <h2 className="in" style={line(restFrom - 1)}>
         other things
       </h2>
-      <List items={other} from={otherFrom} />
+      <List items={rest} from={restFrom} />
 
-      <footer className="in" style={line(otherFrom + other.length)}>
-        <a href="mailto:gergo@gergo.cc">gergo@gergo.cc</a>
+      <footer className="in" style={line(restFrom + rest.length)}>
+        <a href="mailto:me@gergo.cc">me@gergo.cc</a>
         <a href="https://github.com/gergogyulai">github</a>
       </footer>
     </main>
