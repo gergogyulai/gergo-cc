@@ -1,147 +1,67 @@
-import type { IconName } from "@/components/tech-icon";
-import type { ChipStatus } from "@/components/progress-chips";
-
 export type Project = {
-  title: string;
-  type? : "Browser Extension" | "Web App" | "Mobile App" | "CLI Tool" | "Desktop App" | "Library" | "Other" | "Website" | "API" | "Game" | "Bot" | "Firmware" | "Script" | "Plugin" | "Theme" | "Template" | "Tool" | "Automation" | "Portfolio" | "Utility" | "DevOps" | "User Script";
-  scope?: "Personal" | "Work" | "Open Source" | "School" | "Collaboration" | "Hackathon" | "Research" | "Community" | "Experiment" | "Other";
-  description: string;
-  href?: string;
-  githubRepo?: string;
-  highlighted?: boolean;
-  status?: ChipStatus;
-  tags: IconName[];
-}
+  name: string;
+  href: string;
+  note: string;
+};
 
-export const projects: Project[] = [
+// Mirrors the links on the GitHub profile README.
+export const pinned: Project[] = [
   {
-    title: "Project Minato",
-    scope: "Open Source",
-    description: "Self-hosted torrent scraper and indexer with a search UI and Torznab API support. Still in progress.",
-    githubRepo: "https://github.com/gergogyulai/minato",
-    status: "InProgress",
-    tags: ["Typescript", "Hono", "Golang", "React", "Docker"]
+    name: "minato",
+    href: "https://github.com/gergogyulai/minato",
+    note: "self-hosted torrent indexer with a search ui and torznab api",
   },
   {
-    title: "Magneto",
-    type: "Browser Extension",
-    scope: "Open Source",
-    description: "Browser extension that collects magnet links while browsing so I can archive them later.",
-    href: "https://magneto.crackhead.engineering/",
-    githubRepo: "https://github.com/gergogyulai/magneto",
-    status: "Shipped",
-    tags: ["Svelte", "Tailwind", "Vite", "Typescript"]
+    name: "magneto",
+    href: "https://github.com/gergogyulai/magneto",
+    note: "browser extension that collects magnet links for archiving",
   },
   {
-    title: "Lysi",
-    type: "CLI Tool",
-    scope: "Personal",
-    description: "Rust CLI I use to clean up messy photo folders into a more consistent library.",
-    githubRepo: "https://github.com/gergogyulai/lysi",
-    status: "InProgress",
-    tags: ["Rust"]
+    name: "dotfiles",
+    href: "https://github.com/gergogyulai/dotfiles",
+    note: "shell, terminal and machine setup",
   },
   {
-    title: "tiktok-exporter",
-    type: "User Script",
-    scope: "Open Source",
-    description: "Userscript that exports TikTok reposts, likes, and favorites into a plain format for personal archiving.",
-    githubRepo: "https://github.com/gergogyulai/tiktok-exporter",
-    status: "Shipped",
-    tags: ["Javascript"]
+    name: ".vscode-config",
+    href: "https://github.com/gergogyulai/vscode-config",
+    note: "editor settings and extensions",
+  },
+];
+
+export const other: Project[] = [
+  {
+    name: "yetweets",
+    href: "https://yetweets.xyz",
+    note: "archive of kanye west's tweet history",
   },
   {
-    title: "jellyfin-sso-ui",
-    type: "User Script",
-    scope: "Open Source",
-    description: "UI improvements for the Jellyfin SSO Auth Plugin so it feels less bolted on.",
-    githubRepo: "https://github.com/gergogyulai/jellyfin-sso-ui",
-    status: "Shipped",
-    tags: ["Javascript"]
+    name: "tiktok-exporter",
+    href: "https://github.com/gergogyulai/tiktok-exporter",
+    note: "export likes, reposts and favorites to plain files",
   },
   {
-    title: "Lofiplayer",
-    type: "Web App",
-    scope: "Open Source",
-    description: "Simple lofi music player I built because I wanted an always-on background music tab.",
+    name: "lysi",
+    href: "https://github.com/gergogyulai/lysi",
+    note: "rust cli that sorts messy photo folders into a library",
+  },
+  {
+    name: "cloneall",
+    href: "https://github.com/gergogyulai/cloneall",
+    note: "clone every repo of a github user or org",
+  },
+  {
+    name: "jellyfin-sso-ui",
+    href: "https://github.com/gergogyulai/jellyfin-sso-ui",
+    note: "makes the jellyfin sso plugin look native",
+  },
+  {
+    name: "lofiplayer",
     href: "https://lofiplayer.app",
-    githubRepo: "https://github.com/gergogyulai/lofiplayer",
-    status: "Shipped",
-    tags: ["React", "TanstackRouter", "Tailwind", "Vite", "Typescript"]
+    note: "an always-on background music tab",
   },
   {
-    title: "Yetweets",
-    type: "Web App",
-    scope: "Open Source",
-    description: "Archive of Kanye West's tweet history. Mostly a data and archiving project.",
-    href: "https://yetweets.xyz/",
-    githubRepo: "https://github.com/gergogyulai/yetweets",
-    status: "InProgress",
-    highlighted: true,
-    tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
-  },
-  {
-    title: "Noisr",
-    type: "Web App",
-    scope: "Personal",
-    description: "Noise texture generator with size, density, and color controls.",
+    name: "noisr",
     href: "https://noisr.gergo.cc",
-    githubRepo: "https://github.com/gergogyulai/noisr",
-    status: "Shipped",
-    tags: ["Nextjs", "Tailwind", "Typescript", "Vercel"]
+    note: "noise texture generator",
   },
-  {
-    title: "Wintoolbelt",
-    type: "Desktop App",
-    scope: "Personal",
-    description: "Utilities I wrote for cleaning public school PCs, including browser resets and Veyon controls.",
-    githubRepo: "https://github.com/gergogyulai/wintoolbelt",
-    status: "Shipped",
-    tags: ["PowerShell", "Hono", "Typescript"]
-  },
-  {
-    title: "Cloneall",
-    type: "CLI Tool",
-    scope: "Open Source",
-    description: "CLI tool that clones all repositories from a GitHub user or organization.",
-    githubRepo: "https://github.com/gergogyulai/cloneall",
-    status: "Shipped",
-    tags: ["Golang"]
-  },
-  {
-    title: "Sonora",
-    type: "Mobile App",
-    scope: "Open Source",
-    description: "Jellyfin music app built with Expo. I stopped working on it.",
-    githubRepo: "https://github.com/gergogyulai/sonora",
-    status: "Abandoned",
-    tags: ["ReactNative", "Expo", "Typescript"]
-  },
-  {
-    title: "Veyonctl",
-    type: "CLI Tool",
-    scope: "Open Source",
-    description: "Windows CLI for controlling the Veyon service.",
-    githubRepo: "https://github.com/gergogyulai/veyonctl",
-    status: "Archived",
-    tags: ["CSharp"]
-  },
-  {
-    title: "Minitools",
-    type: "Other",
-    scope: "Personal",
-    description: "Small utility tools and experiments in a few languages.",
-    githubRepo: "https://github.com/gergogyulai/minitools",
-    status: "Archived",
-    tags: ["Javascript", "Python", "Golang"]
-  },
-  {
-    title: "movie-web-tv",
-    type: "Web App",
-    scope: "Personal",
-    description: "Personal fork of movie-web adjusted for Smart TV use.",
-    githubRepo: "https://github.com/gergogyulai/movie-web-tv",
-    status: "Unknown",
-    tags: ["React", "Tailwind", "Typescript", "Vite"]
-  }
-]
+];

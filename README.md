@@ -1,16 +1,12 @@
- # My Portfolio
+# gergo.cc
 
- Yet another portfolio site, but this one is mine.
+One page. Edit `lib/projects.ts` to change what is listed.
 
- ## Visit
+```
+bun install
+bun dev
+```
 
- Check out the site at [gergo.cc](https://gergo.cc).
-
- ## Built With
-
- *   [Next.js 16](https://nextjs.org/) - React framework for building performant
-     web applications.
- *   [Tailwind v4](https://tailwindcss.com/) - Utility-first CSS framework for
-     rapid UI development.
- *   [Motion](https://motion.dev/) - A production-ready animation
-     library for React.
+The favicon and OG image are generated at build time from `app/icon.tsx`,
+`app/apple-icon.tsx` and `app/opengraph-image.tsx`, using the IBM Plex Mono
+files in `assets/` (SIL Open Font License, see `assets/OFL.txt`).
