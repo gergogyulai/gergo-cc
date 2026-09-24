@@ -35,11 +35,6 @@ export const projects: Project[] = [
     note: "zero-dependency discord webhook client",
   },
   {
-    name: "cardoo",
-    href: "https://github.com/gergogyulai/cardoo",
-    note: "car ads, browsed like a dating app",
-  },
-  {
     name: "classroom-enhanced",
     href: "https://github.com/gergogyulai/classroom-enhanced",
     note: "making google classroom suck a bit less",
@@ -49,11 +44,6 @@ export const projects: Project[] = [
     href: "https://magneto.crackhead.engineering",
     note: "collects magnet links while you browse",
     featured: true,
-  },
-  {
-    name: "lysi",
-    href: "https://github.com/gergogyulai/lysi",
-    note: "turns messy folders into a photo library",
   },
   {
     name: "tiktok-exporter",
@@ -80,11 +70,6 @@ export const projects: Project[] = [
     name: "wintoolbelt",
     href: "https://github.com/gergogyulai/wintoolbelt",
     note: "cleanup tools for public school pcs",
-  },
-  {
-    name: "referer",
-    href: "https://referer-iota.vercel.app",
-    note: "a whimsical meme maker",
   },
   {
     name: "noisr",
