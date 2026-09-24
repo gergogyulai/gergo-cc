@@ -1,6 +1,6 @@
 # gergo.cc
 
-One page. Edit `lib/projects.ts` to change what is listed.
+One page.
 
 ```
 bun install
