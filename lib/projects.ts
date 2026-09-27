@@ -15,7 +15,7 @@ export const projects: Project[] = [
   },
   {
     name: "adfreegpt",
-    href: "https://github.com/gergogyulai/adfreegpt",
+    href: "https://github.com/gergogyulai/open1000x",
     note: "ublock origin filter for chatgpt ads",
   },
   {
