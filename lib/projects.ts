@@ -19,6 +19,12 @@ export const projects: Project[] = [
     note: "ublock origin filter for chatgpt ads",
   },
   {
+    name: "open1000x",
+    href: "https://github.com/gergogyulai/adfreegpt",
+    note: "control sony 1000x headphones from macos",
+    featured: true,
+  },
+  {
     name: "minato",
     href: "https://projectminato.org",
     note: "self-hosted vault for the torrent ecosystem",
@@ -54,7 +60,6 @@ export const projects: Project[] = [
     name: "yetweets",
     href: "https://yetweets.xyz",
     note: "every tweet kanye west ever published",
-    featured: true,
   },
   {
     name: "tgx-dump",
