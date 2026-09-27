@@ -20,7 +20,7 @@ export const projects: Project[] = [
   },
   {
     name: "open1000x",
-    href: "https://github.com/gergogyulai/adfreegpt",
+    href: "https://open1000x.gergo.cc",
     note: "control sony 1000x headphones from macos",
     featured: true,
   },
