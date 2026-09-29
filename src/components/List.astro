@@ -1,0 +1,22 @@
+---
+import type { Project } from "../lib/projects";
+
+interface Props {
+  items: Project[];
+  from: number;
+  class?: string;
+}
+
+const { items, from, class: className } = Astro.props;
+---
+
+<ul class:list={["list", className]}>
+  {
+    items.map((p, i) => (
+      <li class="in" style={{ "--i": from + i }}>
+        <a href={p.href}>{p.name}</a>
+        <span>{p.note}</span>
+      </li>
+    ))
+  }
+</ul>

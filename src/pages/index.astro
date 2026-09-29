@@ -1,0 +1,36 @@
+---
+import Layout from "../layouts/Layout.astro";
+import List from "../components/List.astro";
+import { projects } from "../lib/projects";
+
+// Each line fades in after the one before it, like text being printed.
+const line = (i: number) => ({ "--i": i });
+
+const featured = projects.filter((p) => p.featured);
+const rest = projects.filter((p) => !p.featured);
+const restFrom = 3 + featured.length;
+---
+
+<Layout>
+  <main>
+    <header class="in" style={line(0)}>
+      <h1>gergo</h1>
+      <span class="ipa">/ˈgɛr.gøː/</span>
+    </header>
+
+    <p class="in" style={line(1)}>
+      I do some open-source work in my free time. Work mainly centered around
+      tools and datahoarding. I also publish other things.
+    </p>
+
+    <List items={featured} from={2} class="featured" />
+
+    <h2 class="in" style={line(restFrom - 1)}>other things</h2>
+    <List items={rest} from={restFrom} />
+
+    <footer class="in" style={line(restFrom + rest.length)}>
+      <a href="mailto:me@gergo.cc">me@gergo.cc</a>
+      <a href="https://github.com/gergogyulai">github</a>
+    </footer>
+  </main>
+</Layout>
