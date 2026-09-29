@@ -34,7 +34,9 @@ async function plexMono() {
 
 // Renders at build time into a static PNG.
 export async function png(node: Node, size: { width: number; height: number }) {
-  const svg = await satori(node, { ...size, fonts: await plexMono() });
+  // Satori types its input as a React node; the plain object has the same shape.
+  const element = node as unknown as Parameters<typeof satori>[0];
+  const svg = await satori(element, { ...size, fonts: await plexMono() });
   const image = new Resvg(svg, { fitTo: { mode: "width", value: size.width } }).render().asPng();
   return new Response(new Uint8Array(image), { headers: { "Content-Type": "image/png" } });
 }
